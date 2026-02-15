@@ -1,4 +1,4 @@
-type ApiQueryKeys = 'properties';
+type ApiQueryKeys = 'properties' | 'locationGeometry';
 
 export function useCreateQueryKeys<T extends ApiQueryKeys, K extends Record<string, (...args: any[]) => readonly any[]>>(key: T, methods: K): { [P in keyof K]: (...args: Parameters<K[P]>) => readonly [T, ...ReturnType<K[P]>] } {
     const keys = {} as any;

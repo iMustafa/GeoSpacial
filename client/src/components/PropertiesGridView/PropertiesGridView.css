@@ -1,0 +1,23 @@
+.properties-grid-view {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.properties-grid-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.properties-grid-empty-state,
+.properties-grid-loading,
+.properties-grid-error,
+.properties-grid-empty {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+    font-size: 1.1rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
