@@ -1,0 +1,27 @@
+{
+    "name": "client",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc -b && vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "react": "catalog:",
+        "react-dom": "catalog:",
+        "@maat/design-system": "workspace:*",
+        "@maat/api-types": "workspace:*",
+        "@maat/api-maat": "workspace:*",
+        "@maat/api-hooks": "workspace:*",
+        "@maat/hooks": "workspace:*"
+    },
+    "devDependencies": {
+        "@types/react": "catalog:",
+        "@types/react-dom": "catalog:",
+        "@vitejs/plugin-react": "catalog:",
+        "typescript": "catalog:",
+        "vite": "catalog:"
+    }
+}

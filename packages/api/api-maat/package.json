@@ -1,0 +1,21 @@
+{
+    "name": "@maat/api-maat",
+    "version": "1.0.0",
+    "private": true,
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsup src/index.ts --format cjs,esm --dts",
+        "dev": "tsup src/index.ts --format cjs,esm --dts --watch"
+    },
+    "dependencies": {
+        "@maat/api-base": "workspace:*",
+        "@maat/api-hooks": "workspace:*",
+        "@maat/api-types": "workspace:*"
+    },
+    "devDependencies": {
+        "tsup": "catalog:",
+        "typescript": "catalog:"
+    }
+}

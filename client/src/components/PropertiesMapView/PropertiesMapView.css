@@ -1,0 +1,172 @@
+.pmv-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+
+.pmv-map-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.pmv-map {
+    height: 100%;
+    width: 100%;
+}
+
+.pmv-sidebar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    width: 400px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.pmv-sidebar-top {
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+
+.pmv-sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+}
+
+.pmv-sidebar-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #1a1a1a;
+}
+
+.pmv-count {
+    font-size: 0.9rem;
+    color: #666;
+    background: #f0f0f0;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.pmv-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.pmv-card-wrapper {
+    transition: transform 0.2s;
+    border-radius: 12px;
+}
+
+.pmv-card-wrapper.selected {
+    outline: 2px solid #1976d2;
+    transform: scale(1.02);
+}
+
+.pmv-loading,
+.pmv-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.pmv-error {
+    color: #d32f2f;
+}
+
+.pmv-filters {
+    padding: 16px;
+    background: #f9fafb;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+    .pmv-sidebar {
+        /* Full screen overlay layout for mobile */
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background: transparent;
+        backdrop-filter: none;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+        pointer-events: none;
+        /* Let clicks pass to map */
+        justify-content: space-between;
+    }
+
+    .pmv-sidebar-top {
+        pointer-events: auto;
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        z-index: 20;
+    }
+
+    .pmv-list {
+        pointer-events: auto;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        width: 100%;
+        height: auto;
+        flex: 0 0 auto;
+        padding: 16px;
+        background: transparent;
+        /* Transparent background over map */
+        gap: 16px;
+        /* Hide scrollbar for cleaner look */
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* IE/Edge */
+        scroll-snap-type: x mandatory;
+        padding-bottom: 30px;
+        /* Space from bottom */
+    }
+
+    .pmv-list::-webkit-scrollbar {
+        display: none;
+        /* Chrome/Safari */
+    }
+
+    .pmv-card-wrapper {
+        min-width: 85vw;
+        /* Almost full width for mobile cards */
+        max-width: 320px;
+        background: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        flex-shrink: 0;
+        /* Prevent shrinking */
+        scroll-snap-align: center;
+    }
+}

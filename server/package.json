@@ -1,0 +1,28 @@
+{
+    "name": "server",
+    "version": "0.0.1",
+    "dependencies": {
+        "@maat/api-types": "workspace:*",
+        "cors": "catalog:",
+        "express": "catalog:",
+        "knex": "catalog:",
+        "mysql2": "catalog:",
+        "zod": "catalog:"
+    },
+    "devDependencies": {
+        "@types/cors": "catalog:",
+        "@types/express": "catalog:",
+        "@types/node": "catalog:",
+        "tsx": "catalog:",
+        "typescript": "catalog:"
+    },
+    "scripts": {
+        "dev": "tsx watch src/index.ts",
+        "build": "tsc",
+        "start": "node dist/index.js",
+        "migrate:make": "knex migrate:make",
+        "migrate:latest": "knex migrate:latest",
+        "migrate:rollback": "knex migrate:rollback",
+        "seed:run": "tsx node_modules/knex/bin/cli.js seed:run"
+    }
+}
